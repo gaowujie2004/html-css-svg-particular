@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>line-height 各个部分尺寸推测</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    div {
+      margin: 20px;
+      outline: 1px solid red;
+      text-align: center;
+    }
+    span {
+      font-size: 200px;
+      font-family: '宋体';
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  line-height = (font-size/em size) * (win ascent + win descent)
+  <p>
+    各个部分的 尺寸推测.
+  </p>
+  <div>
+    <span>Xx</span>
+  </div>
+</body>
+</html>
