@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  div {
+    background-color: pink;
+    /* font-size: 20px;
+    line-height: 16px; */
+    text-align: center;
+    vertical-align: bottom;
+  }
+  img {
+    width: 600px;
+    /* vertical-align: bottom; */
+  }
+  span {
+    background-color: skyblue;
+    display: inline-block;
+  }
+</style>
+<title> 测试 </title>
+</head>
+<body>
+  <style>
+    
+  </style>
+  <p>
+    最后div高度有个缝隙.  这个缝隙是  struct 也就是 幽灵空白节点, 这个东西就是 vercital-align 的参考系了
+    <br>
+    行盒子, 的高度 怎么计算?
+    <br>
+    随着 div font-size 变大, 间隙也随着变大
+  </p>
+  <input type="range" value="0" min="0" max="200" name="" id="" oninput="div.style.fontSize = this.value + 'px'">
+  <div id="div">
+    <img src="./img/3.jpg" alt="" id="img">
+  </div>
+</body>
+</html>

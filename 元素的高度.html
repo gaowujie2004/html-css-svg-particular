@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+</style>
+<title> 测试 </title>
+</head>
+<body>
+	<style>
+		.test1 {
+			border: 1px solid red;
+			font-size: 36px;
+			line-height: 0px;
+		}
+		.test2 {
+			border: 1px solid red;
+			line-height: 36px;
+			font-size: 0;
+		}
+		.test1 {
+			margin-bottom: 1em;
+		}
+
+
+		
+		span {
+			border: 1px solid red;
+		}
+		.span1 {
+			line-height: 50px;
+		}
+		.span2 {
+			line-height: 70px;
+		}
+	</style>
+	<p>
+		块元素的高度是由 文字 font-size 撑起的吗?
+		-- 不是, 是line-height , 是 内联盒子的高度撑起?
+		-- 最终都是 36px
+
+
+		内联元素的高度, 是由 font-size font-family 决定的. 又叫 内容区高度
+		
+	</p>
+
+	<div class="test1">
+		gaowujie
+	</div>
+	<div class="test2">
+		gaowujie
+	</div>
+
+	<span class="span1">gao</span>
+	<span class="span2">wu jie</span>
+</body>
+</html>
