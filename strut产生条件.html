@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="/HtmlTest.css" as="style"> -->
+
+  <!-- <link rel="stylesheet" href="/HtmlTest.css"> -->
+  <link rel="" href="">
+  <title>strut 在捣乱</title>
+  
+  <style>
+    body {
+
+    }
+    
+    div {
+      border: 1px solid red;
+    }
+    span {
+      background-color: pink;
+      display: inline-block;
+    }
+    
+  </style>
+</head>
+<body>
+  <p>
+    span 现在是 inline-block 元素
+    div 被撑起来了
+
+    <h1>为什么！！！！！</h1>
+    首先， div 不是被 span撑起来的。
+    span没有内容，height：0； width： 0；
+    那么 div是被谁撑起来的？ 
+
+    <h1>解答</h1>
+    div 是被 strut 撑起来的， 若有 inline-block 元素即使是 空标签，则会产生 strut。
+
+    <br>
+    <br>
+    若父元素是 空标签， 还没有 inline-block，则不会有 strut
+  </p>
+
+  <!-- main -->
+  <div>
+    <span></span>
+  </div>
+
+</body> 
+</html>
