@@ -10,27 +10,28 @@
     padding: 0;
     box-sizing: border-box;
   }
-  div {
-    background-color: pink;
-    /* font-size: 20px;
-    line-height: 16px; */
-    text-align: center;
-    vertical-align: bottom;
-  }
-  img {
-    width: 600px;
-    /* vertical-align: bottom; */
-  }
-  span {
-    background-color: skyblue;
-    display: inline-block;
-  }
 </style>
 <title> 测试 </title>
 </head>
 <body>
   <style>
-    
+    div {
+      background-color: pink;
+      /* font-size: 20px; */
+      /* line-height: 5px; */
+      text-align: center;
+
+      font-size: 16px;
+      font-family: '微软雅黑';
+    }
+    img {
+      width: 600px;
+      /* vertical-align: bottom; */
+    }
+    span {
+      background-color: skyblue;
+      /* display: inline-block; */
+    }
   </style>
   <p>
     最后div高度有个缝隙.  这个缝隙是  struct 也就是 幽灵空白节点, 这个东西就是 vercital-align 的参考系了
@@ -39,9 +40,24 @@
     <br>
     随着 div font-size 变大, 间隙也随着变大
   </p>
+
+  <p>
+    幽灵空白节点 - 就是 strut. strut 就是继承父元素的属性. 形成一个 width:0 的 inline box <br>
+    默认的对齐是 baseline <br>
+    inline box的高度: 内容区高度 + 半间距 = line-height <br>
+
+    <h6>计算:</h6>
+    <b>strut: (font-size/em size)*(win ascent + win descent) + line gap</b>
+    <span>微软雅黑 line gap: 0</span> <br><br>
+
+    
+  </p>
+
+
   <input type="range" value="0" min="0" max="200" name="" id="" oninput="div.style.fontSize = this.value + 'px'">
+
   <div id="div">
-    <img src="./img/3.jpg" alt="" id="img">
+    <img src="../public/img/3.jpg" alt="" id="img">
   </div>
 </body>
 </html>

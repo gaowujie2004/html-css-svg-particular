@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> 测试 </title>
+</head>
+<body>
+  <style>
+    div {
+      background-color: pink;
+      text-align: center;
+
+      font-size: 16px;
+      line-height: 120px;
+      font-family: '宋体';
+    }
+    span {
+      background-color: skyblue;
+      /* display: inline-block; */
+    }
+    img {
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+  <p>
+    strut 支柱,即幽灵空白节点. 它是基础, 不移动. 移动的是其他的 inline box. <br>
+    line box(行框盒子)高度: 由 这一行中的 内联盒子的最低点  与  最高点   之间的距离 <br>
+    并且 最高点 和 最低点 不能是同一个 inline box(内联盒子) <br>
+  </p>
+
+  <div id="div">
+    <!-- <span style="
+            font-size: 100px;
+            font-family: '宋体';
+            line-height: 150px;">Xx</span> -->
+
+    <img src="../public/img/3.jpg" id="img">
+  </div>
+</body>
+</html>
