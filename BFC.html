@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  pre {
+    white-space: normal;
+  }
+  
+  @media screen and (max-device-width: 420px) {
+    pre {
+      background-color: red;
+      font-size: 4.26vw;
+    }
+  }
+  @media screen and (min-device-width: 1024px) {
+    /* 设备独立像素 */
+    /* PC 设备 */
+    body {
+      font-size: 16px;
+    }
+  }
+</style>
+<title> BFC: 块级格式化上下文 </title>
+</head>
+<body>
+  <pre>
+    BFC, 块级格式化上下文, 是一个规则,一个 一个元素具有 BFC规则.  那么 其子元素会遵守一些定制好的规则 进行渲染排布. 
+    BFC是针对 子元素的
+  
+
+    BFC特性(规则)
+    1、 第一个元素(块元素)的 margin-top 将作用于自身， 而不是默认的作用于父元素。
+        最后一个元素(块元素) 的 margin-bottom 将作会撑开父元素，默认是不会撑开的。前提是父元素height：auto
+    2、 
+    3、 
+
+    如何开启BFC
+    1、
+    2、
+    3、
+
+    如何将一个元素变成具有 BFC特性的上下文 ？
+    .bfc1 变成BFC上下文， 那么约束的是  .bfc1 的后代元素(是后代)
+    这个 .bfc1 就具有了 BFC 上下文
+
+    子元素 margin 跳出。给父元素加 border也可以阻止。
+  </pre>
+  <style>
+    body > div {
+      /* width: 400px;
+      height: 400px; */
+      background-color: skyblue;
+    }
+    div > div {
+      /* width: 200px; */
+      /* height: 200px; */
+      background-color: pink;
+    }
+
+    .son1 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }    
+    .bfc1 {
+      /* 将 bfc1 变成BFC上下文 约束的是它的子代元素*/
+
+      /* 方法1 形成BFC */
+      /* overflow 不为visible即可 */
+      overflow: hidden; 
+      
+      /* 方法2 形成BFC 兼容性*/
+      /* display: flow-root; */ 
+
+      /* 方法3 形成BFC */
+      /* float: left; */
+    }
+  </style>
+
+  <!-- 测试 第一个规则 -->
+  <div class="bfc1">
+    <div class="son1">
+    
+    </div>
+  </div>
+
+  <!-- 测试 第二个规则 -->
+
+
+</body>
+</html>

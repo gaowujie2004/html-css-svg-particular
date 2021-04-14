@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> 测试 </title>
+</head>
+<body>
+  <b>高</b>
+
+
+缩放影响哪些东西？？
+  设备独立像素比也随着改变。 
+  vw单位不影响， 因为视口宽度， 可视宽度就是个物理特性
+  px会改变， 因为 CSS px  默认是等于 独立像素
+  但是 缩放后。就不是了 
+
+html.clientWidth 和 window.innerWidth 对应的都是 布局视口(会随着缩放改变)
+  如果放大200%， 那 html.clientWidth 变成 之前的 0.5倍
+  html.clientWidth 是不包含滚动条的布局尺寸
+  window.innerWidth 是包含滚动条的布局尺寸
+
+  outHeight 浏览器窗口。 这个不受影响
+
+400px 400px的div，放大两倍后 
+  但是样式信息肯定还是 400px 400px 
+  offset、client、scroll 获取的不会变 
+
+window.onresize  指的是。 （移动端特殊）
+  window.innerWidth  window.innerHeight，而不是指浏览器窗口，是指浏览器 布局视口(不是视觉视口)
+
+
+window.innerWidth  window.outerWidth 
+  缩放后的布局视口大小(包括滚动条)    浏览器窗口大小
+  当没有缩放的时候  他们俩相等
+
+
+// 移动端 - 以上方法不行  window.innerWidth 对标设备独立像素。  并且 移动端的 window.devicePixelRatio 是不会变的。固定的，
+pc端， 不同
+
+window.visualViewport API是 只能在移动端使用。（计算缩放布局）
+
+window.onresize 在移动端端当你 让浏览器窗口改变时就会触发。 比如浏览器窗口最小化时，  最大化时， 
+
+<script>
+  window.onresize = function() {
+    console.log('ok');
+  }
+
+
+  document.onvisibilitychange = function() {
+    console.log(document.visibilityState)
+  }
+
+  
+</script>
+  
+
+</body>
+</html>
