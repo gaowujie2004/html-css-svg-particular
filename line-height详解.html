@@ -12,24 +12,26 @@
       box-sizing: border-box;
     }
     div {
-      margin: 20px;
+      /* margin: 20px; */
       outline: 1px solid red;
       text-align: center;
     }
-    span {
-      font-size: 200px;
-      font-family: '宋体';
-      background-color: skyblue;
-    }
+    
   </style>
 </head>
 <body>
   line-height = (font-size/em size) * (win ascent + win descent)
+  line-height '<' (font-size)实际的大小  此时 inline box高度还是 line-height 决定.
+  不过呢是 ,半间距是负值, 多行文字时  会重叠 
   <p>
     各个部分的 尺寸推测.
   </p>
   <div>
     <span>Xx</span>
   </div>
+
+
+
+  <div>高武杰</div>
 </body>
 </html>

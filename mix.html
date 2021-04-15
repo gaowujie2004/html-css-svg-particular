@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> mix 元素混入 </title>
+</head>
+<body>
+  <style>
+    .father {
+      background: green;
+      /* background: #000; */
+    }
+
+    .son {
+        background: skyblue;
+        width: 400px;
+        height: 200px;
+        mix-blend-mode: screen;
+    }
+
+    h1 {
+
+    }
+
+    .box {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+    }
+    span {
+      color: blue;
+    }
+    
+  </style>
+
+  <!-- <div class="father">
+    <div class="son">
+      <h1>
+        <div>
+          <div class="box"></div>
+          <span>Gao Wu Jie</span>
+        </div>
+      </h1>
+    </div>
+  </div> -->
+
+  <style>
+    .father {
+        background: skyblue
+    }
+  h1 {
+      width: 50%;
+      background: green;
+      mix-blend-mode: screen;
+  }
+
+
+  </style>
+  <div class="father">
+    <h1>Gao WU Jie</h1>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> 容纳块 </title>
+</head>
+<body>
+  <style>
+    html {
+      height: 2000px;
+    }
+    
+  </style>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <input type="text" maxlength="4">
+  相对定位, 其实不是相对于自己的.  
+  其容纳块是 最近的祖先 块元素内容区
+  left \ right 这类属性,  是从自身开始的 . 
+
+
+  <style>
+    .test {
+      height: 200px;
+      width: 50vw;
+      border: 1px solid red;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .img {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      display: inline-block;
+    }
+    span {
+    
+    }
+  </style>
+  <div class="test hover:white hover-XX" data-index="34" data-name="gaowujie">
+    <div class="img">x</div>
+    <span>高武杰高武杰</span>
+  </div>
+</body>
+</html>

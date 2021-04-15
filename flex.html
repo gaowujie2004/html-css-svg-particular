@@ -11,7 +11,7 @@
     box-sizing: border-box;
   }
 </style>
-<title> 测试 </title>
+<title> Flex 高级进阶 </title>
 </head>
 <body>
   <style>
@@ -43,8 +43,8 @@
       /* align-items: stretch; */
 
 
-      align-content: space-between;
-      align-items: center;
+      align-content: center;
+      align-items: flex-end;
     }
 
     .son {
@@ -65,6 +65,10 @@
     .son:nth-child(3) {
       /* align-self: flex-start; */
       /* height: 200px; */
+      /* margin-top: 60px; */
+      align-self: flex-end;
+      margin-top: 2px;
+    
     }
   </style>
   <div class="father">
@@ -74,6 +78,8 @@
     <div class="son"></div>
   </div>
 
+  以下, 均是   flex-direction: row;  主轴方向是水平的
+
   flex 上下文中： 
     flex弹性元素 margin不会重叠
     flex弹性元素 没有宽度时，和标准流的 DIV有点不一致， 
@@ -81,5 +87,12 @@
 
   flex 上下文中:
     多条主轴时， 弹性元素在 侧轴方向对齐是怎么样的？ 
+
+
+  flex item(弹性元素),  
+    cross axis size 包括弹性元素的 margin-top/bottom
+    margin-top  margin-bottom   控制弹性元素 / 相对于侧轴尺寸大小
+    flex-item  margin-top: auto 则表示  侧轴剩余空间
+
 </body>
 </html>
