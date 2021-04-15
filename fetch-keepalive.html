@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> fetch keepAlive </title>
+</head>
+<body>
+  <style>
+    
+  </style>
+  不是修改 请求头中的 Connection: close; 
+  而是指,  这个请求发出去, 页面关闭仍然在后台发送, 如果是普通xhr当页面关闭则立马关闭TCP请求
+
+  <input type="file" name="" id="fileDOM">
+  <script>
+    let formData = new FormData()
+    let file
+
+    fileDOM.onchange = function() {
+      file  = fileDOM.files[0]
+      
+      
+      console.log(fileDOM.files[0]);
+
+      // let str = ''
+      
+      // for (let i=0; i<1024*100; i++) {
+      //   let random = Math.random().toString(26).substr(2,1)
+      //   str += random
+      // }
+      // fetch('http://127.0.0.1/upload', {
+      //   method: 'POST',
+      //   body: str,
+      //   keepalive: true,
+      // })
+      
+
+      
+
+
+      let xhr = new XMLHttpRequest()
+      xhr.open('POST','http://127.0.0.1/upload')
+      xhr.send(file)
+      location.href = 'http://127.0.0.1'
+
+    }
+    
+  </script>
+</body>
+</html>
