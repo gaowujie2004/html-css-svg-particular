@@ -44,13 +44,11 @@
       // })
       
 
-      
-
-
       let xhr = new XMLHttpRequest()
       xhr.open('POST','http://127.0.0.1/upload')
+      xhr.setRequestHeader('Transfer-Encoding', 'chunk')
       xhr.send(file)
-      location.href = 'http://127.0.0.1'
+      // location.href = 'http://127.0.0.1'
 
     }
     

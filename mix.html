@@ -15,30 +15,7 @@
 </head>
 <body>
   <style>
-    .father {
-      background: green;
-      /* background: #000; */
-    }
-
-    .son {
-        background: skyblue;
-        width: 400px;
-        height: 200px;
-        mix-blend-mode: screen;
-    }
-
-    h1 {
-
-    }
-
-    .box {
-      width: 20px;
-      height: 20px;
-      background-color: red;
-    }
-    span {
-      color: blue;
-    }
+   
     
   </style>
 
@@ -55,18 +32,25 @@
 
   <style>
     .father {
-        background: skyblue
+      width: 400px;
+      height: 400px;
+      border: 10px solid red;
+      background-color: skyblue;
+      transition: all 3s;
     }
-  h1 {
-      width: 50%;
-      background: green;
+    
+    .son {
+      width: 200px; 
+      height: 200px;
+      background-color: rgb(255,0,0);
+      border: 15px solid green;
       mix-blend-mode: screen;
-  }
+    }
 
 
   </style>
   <div class="father">
-    <h1>Gao WU Jie</h1>
+    <div class="son"></div>
   </div>
 </body>
 </html>
