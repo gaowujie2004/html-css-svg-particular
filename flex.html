@@ -48,9 +48,8 @@
     }
 
     .son {
-      width: 40%;
       height: 100px;
-      flex: 0 1 auto;
+      flex: 0 0 40%;
       background-color: pink;
       margin: 0 5px;
     }
@@ -70,12 +69,20 @@
       margin-top: 2px;
     
     }
+
+    .test {
+      width: 200px;
+      height: 90px;
+      background-color: pink;
+    }
   </style>
   <div class="father">
     <div class="son"></div>
     <div class="son"></div>
     <div class="son"></div>
-    <div class="son"></div>
+    <div class="son">
+      <div class="test"></div>
+    </div>
   </div>
 
   以下, 均是   flex-direction: row;  主轴方向是水平的
@@ -83,7 +90,7 @@
   flex 上下文中： 
     flex弹性元素 margin不会重叠
     flex弹性元素 没有宽度时，和标准流的 DIV有点不一致， 
-    就是 设置 margin-left margin-right 不会撑开DIV
+    就是 设置 margin-left margin-right 不会撑开DIV(这是标准流的)
 
   flex 上下文中:
     多条主轴时， 弹性元素在 侧轴方向对齐是怎么样的？ 

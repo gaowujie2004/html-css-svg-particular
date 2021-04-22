@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title>  </title>
+</head>
+<body>
+  <style>
+    .container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-gap: 10px;
+}
+.list {
+    width: 100px; height:100px;
+    background-color: skyblue;
+}
+  </style>
+ <div class="container">
+  <div class="list"></div>
+  <div class="list"></div>
+  <div class="list"></div>
+  <div class="list"></div>
+  <div class="list"></div>
+  <div class="list"></div>
+  <div class="list"></div>
+</div>
+
+ <!-- flex 最后一行左对齐-->
+
+
+    <!-- 一、子项宽度不固定 每行个数不定 但是要求除了最后一行， 其他行都够把剩余空间等分给边距-->
+    <!-- 两种方式 1， 最后一个元素 margin-right: auto-->
+    <!-- 2、 container::after { content:""; margin-right: auto } -->
+
+
+    <!-- 每一行列数固定 宽度随着变化-->
+    <!-- 每一行固定4元素个数   比如4个元素 -->
+      <!-- 用 margin-right 模拟 space-between -->
+      <!-- last-child:nth-child(4n-1)   最后一行的最后一个元素 -->
+      <!-- last-child:nth-child(4n-2)        最后一行的  倒数第二个元素   4n 表示每行 4个元素 -->
+
+
+    <!-- 每一行 宽度一样，  但是会个数会变化 -->
+    
+</body>
+</html>

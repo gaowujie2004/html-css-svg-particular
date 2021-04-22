@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> overflow-focus </title>
+</head>
+<body>
+  在一个滚动容器(尺寸有限制,overflow不为visible)
+  滚动容器添加 scroll-behavior: smooth
+  <style>
+    body {
+      font-size: 20px;
+    }
+    button {
+      font-size: 100%;
+    }
+    .scroll-container {
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+      border: 2px solid skyblue;
+
+      /* 平滑滚动,   通过JS或者 a标签滚动时,  是平滑得 */
+      scroll-behavior: smooth;
+    }
+    .scroll-container > .row {
+      width: 100%;
+      height: 100%;
+      background-color: deepskyblue;
+      /**
+      * 创建新得容纳块, 子元素溢出时剪切.
+      */
+      contain: paint;
+      position: relative;
+    }
+
+    .scroll-container input {
+      left: 0;
+      top:0;
+      width: 0px;
+      height: 100%;
+      border: none;
+      outline: none;
+      position: absolute;
+    }
+  </style>
+  
+  <!-- 滚动容器 Start -->
+  <div class="scroll-container">
+    
+    <div class="row">
+      <!-- 当此表单获得焦点时, 就会带着 .row 一起滚动到 滚动容器的顶部 -->
+      <!-- 表单高度要 100%, 类似于 a标签描点, 会滚动到顶部 -->
+      <input id="one" readonly>
+      <div class="box">1111111</div>
+    </div>
+
+    <div class="row">
+      <input id="two" readonly>
+      <div class="box">2222222</div>
+    </div>
+
+    <div class="row">
+      <input id="three" readonly>
+      <div class="box">33333333</div>
+    </div>
+
+    <div class="row">
+      <input id="five" readonly>
+      <div class="box">44444444</div>
+    </div>
+  </div>
+  <!-- 滚动容器 End -->
+
+  <div class="list">
+    <button>
+      <label for="one">第一个</label>
+    </button>
+
+    <button>
+      <label for="two">第二个</label>
+    </button>
+
+
+    <button>
+      <label for="three">第三个</label>
+    </button>
+
+    <button>
+      <label for="five">第四个</label>
+    </button>
+    
+  </div>
+
+</body>
+</html>

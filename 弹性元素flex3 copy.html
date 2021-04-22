@@ -14,7 +14,7 @@
     font-style: normal;
   }
 </style>
-<title> 弹性元素的子元素 过宽， 问题 </title>
+<title> 测试 </title>
 </head>
 <body>
 
@@ -45,8 +45,8 @@
     }
     
     .flex > :last-child {
-      flex: 1 0 auto;   
-       /* 在分配之前  最后一个 项目元素所占空间是 0, 因为 width: 0 flex-basis: auto; */
+      flex: 1 0 auto;
+       /* 在分配之前  最后一个 项目元素所占空间是 0 */
       width: 0; 
       /* 使 flex 属性起效果 */
     }
@@ -54,7 +54,7 @@
 
     .width-son {
       margin: 10px;
-      width: 900px;
+      width: 1200px;
       height: 20px;
       background-color: red;
     }
@@ -65,7 +65,7 @@
 
   <p>
     解决: !!!!!!!!!!!!!!!!!!!!!!!!  如何在这种情况下 让弹性元素   的 flex： 1 0 0； 起效果呢 ?
-    2、 弹性元素：  width: 0px;
+    3、 弹性元素：  max-width / min-width 
   </p>
   <div class="flex">
     <div class="item">

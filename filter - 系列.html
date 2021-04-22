@@ -15,15 +15,25 @@
 </head>
 <body>
   <style>
-    [hui] {
+    img {
       width: 250px;
       height: 250px;
-
+    }
+    [hui] {
       filter: grayscale(100%);
+    }
+
+    [liang] {
+      filter: brightness(60%);
     }
   </style>
 
-  <p>灰度</p>
+  <p>灰度 grayscale 灰度, 100%完全灰 0%无变化</p>
   <img hui src="../public/img/1.jpg" alt="">
+
+  <p>亮度 brightness:   100%正常,  0%完全黑 </p>
+  <img liang src="../public/img/1.jpg" alt="">
+
+  
 </body>
 </html>
