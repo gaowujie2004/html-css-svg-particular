@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title>  </title>
+</head>
+<body>
+  
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+    }
+    body > div {
+      flex: 1;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: 400px;
+      background-color: skyblue;
+    }
+    body>div + div {
+      margin-left: 20px;
+    }
+
+    .visibility {
+      visibility: hidden; /* 具有继承性 */
+    }
+    .visibility h1, .visibility p {
+      visibility: initial;
+    }
+  </style>
+  <div class="display">
+    <p>
+      <h1>display</h1>
+    </p>
+  </div>
+  <div class="visibility">
+    <p>
+      <h1>visibility</h1>
+      <p>可以被冒泡</p>
+    </p>
+  </div>
+  <div class="opacity">
+    <p>
+      <h1>opacity</h1>
+    </p>
+  </div>
+  <script>
+    let $ = function(str) {
+      return document.querySelector(str)
+    }
+    let $$ = function(str) {
+        return Array.from(document.querySelectorAll(str))
+    }
+    let mainSleep = function(duration=1000) {
+        let date = Date.now()
+        while (Date.now() - date <= duration) {}
+    }
+
+    let none = $('.display')
+    let visi = $('.visibility')
+    let opacity = $('.opacity')
+
+    visi.addEventListener('click', _ => {
+      console.log('visibility 触发')
+    })
+  </script>
+</body>
+</html>

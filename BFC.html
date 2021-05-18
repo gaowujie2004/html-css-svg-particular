@@ -38,8 +38,8 @@
 
     BFC特性(规则)
     1、 第一个元素(块元素)的 margin-top 将作用于自身， 而不是默认的作用于父元素。
-        最后一个元素(块元素) 的 margin-bottom 将作会撑开父元素，默认是不会撑开的。前提是父元素height：auto
-    2、 
+        最后一个元素(块元素) 的 margin-bottom 将作会撑开父元素，默认是不会撑开的(border也可以控制)。前提是父元素height：auto
+    2、 计算高度时, 加上浮动元素.(清除浮动的其他方法)
     3、 
 
     如何开启BFC
@@ -76,13 +76,17 @@
 
       /* 方法1 形成BFC */
       /* overflow 不为visible即可 */
-      overflow: hidden; 
+      /* overflow: hidden;  */
       
       /* 方法2 形成BFC 兼容性*/
       /* display: flow-root; */ 
 
       /* 方法3 形成BFC */
       /* float: left; */
+
+      /* 方法4 contain: paint; */
+      /* 子元素溢出隐藏.  触发BFC, 成为容纳块 */
+      contain: paint;
     }
   </style>
 
