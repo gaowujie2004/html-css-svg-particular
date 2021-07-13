@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<title> 浮动布局 </title>
+</head>
+<body>
+  <style>
+    .container {
+      border: 2px solid red;
+      display: flow-root;
+    }
+    .left {
+      width: 200px;
+      height: 400px;
+      background-color: pink;
+      float: left;
+    }
+    .right {
+      /* contain: paint; */
+      height: 400px;
+      background-color: skyblue;
+    }
+  </style>
+  <div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+
+</body>
+</html>
