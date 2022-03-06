@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+    <title>测试</title>
+  </head>
+  <body>
+    <style>
+      body {
+        height: 3000px;
+        /* background-image: url('../../public/img/3.jpg'); */
+      }
+
+      .father {
+        width: 700px;
+        height: 700px;
+        border: 2px solid pink;
+
+        contain: paint;
+      }
+      .father::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url('../../public/img/3.jpg');
+        background-position: center;
+        filter: blur(10px);
+      }
+    </style>
+
+    <div class="father">
+      <p>gggggggggg</p>
+    </div>
+    <script></script>
+  </body>
+</html>

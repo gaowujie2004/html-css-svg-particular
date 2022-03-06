@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>
+<title> flex-item 被其子元素撑开 </title>
+</head>
+<body>
+    <div class="flex">
+        <div class="flex-item">111</div>
+        <div class="flex-item">222</div>
+        <div class="flex-item">
+            <div class="box"></div>
+        </div>
+    </div>
+    <style>
+        .flex {
+            border: 5px solid black;
+            height: 90vh;
+            display: flex;
+        }
+        .flex-item {
+            
+        }
+        .flex-item:nth-child(1) {
+            background-color: skyblue;
+            flex: 1 0 400px;
+        }
+        .flex-item:nth-child(2) {
+            background-color: pink;
+            flex: 1 0 300px;
+        }
+        .flex-item:nth-child(3) {
+            background-color: deeppink;
+            min-width: 0;
+
+            flex: 0 0 auto;
+        }
+        .box {
+            width: 90%;
+            background-color: green;
+            height: 90%;
+        }
+    </style>
+</body>
+</html>

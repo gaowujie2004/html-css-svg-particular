@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  width: 90vmin;
+  height: 90vmin;
+  background: pink;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-item:nth-child(odd) {
+  background-color: skyblue;
+}
+
+.flex-item {
+  width: 40vmin;
+  height: 30vmin;
+  background: deeppink;
+
+  flex: 0 0 max-content;
+}
