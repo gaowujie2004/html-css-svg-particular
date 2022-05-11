@@ -1,0 +1,15 @@
+.wrap {
+  box-sizing: content-box;
+  width: 600px;
+  height: 800px;
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-rows: 200px 300px;
+}
+.item:nth-child(even) {
+  background-color: pink;
+}
+.item:nth-child(odd) {
+  background-color: skyblue;
+}
