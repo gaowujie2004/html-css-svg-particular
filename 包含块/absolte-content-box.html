@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>包含块</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: beige;
+      }
+
+      section {
+        position: absolute;
+        width: 400px;
+        height: 160px;
+        padding: 20px;
+        margin: 50px;
+        background: lightgray;
+        border: 5px solid pink;
+
+        /* width 现在是内容区，没有设置 box-sizing */
+      }
+
+      p {
+        /* 绝对定位元素。相对父元素的 border-box 区域 */
+
+        position: absolute;
+        /* == (400px + 20px + 20px) * .5 = 220px */
+        width: 50%;
+
+        /* (160px + 30px + 20px) * .5 = 100px */
+        height: 50%;
+
+        /* y: ( width+padding-x )father * .1  =  (400px + 20px + 20px) * 0.1 = 44 */
+        /* x: ( width+padding-x )father * .05 =  (400px + 20px + 20px) * 0.05 = 22 */
+        margin: 10% 5%;
+
+        /* 同上 */
+        padding: 10% 5%;
+
+        /* y： height+padding-y     (160+20+20)*0.2 = 40 */
+        top: 20%;
+
+        background: cyan;
+      }
+    </style>
+    <section>
+      <p>G</p>
+    </section>
+    <div>absolute/fixed 的元素，他们的width、height、padding、margin、border、left（偏移量）如果是百分比，那么是相对于谁？ DOM结构上的父元素吗？</div>
+    <div>不是，是相对 absolte/fixed 最近的包括块元素的border-box（即内容区+padding区）</div>
+
+    <div>注意：对于普通的元素，是相对父元素的内容区</div>
+    <div>在计算 margin/padding 垂直方向上的百分比值，要格外注意，是相对包含块水平方向上（内容区+padding区）</div>
+    <div>top、bottom 才是相对包含块垂直方向</div>
+  </body>
+</html>
