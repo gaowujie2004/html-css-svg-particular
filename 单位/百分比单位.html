@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>width、height、padding、margin 百分比</title>
+  </head>
+  <body>
+    <h2>以下针对<em>普通流</em>，不讨论 absolute/fixed</h2>
+
+    <div class="margin-f">
+      <div class="margin-s">margin 水平/垂直，都是相对于父元素的内容区宽度</div>
+    </div>
+
+    <div class="padding-f">
+      <div class="padding-s">padding 水平/垂直，都是相对于父元素的内容区宽度</div>
+    </div>
+
+    <div class="width-f">
+      <div class="width-s">width</div>
+    </div>
+
+    <style>
+      .margin-f {
+        width: 400px;
+        padding: 20px;
+        height: 200px;
+        background-color: pink;
+        border: 1px solid red;
+      }
+      .margin-s {
+        background-color: skyblue;
+        margin: 20%;
+
+        /* 相当于margin: 80px 80px 80px 80px */
+      }
+
+      .padding-f {
+        width: 400px;
+        padding: 20px;
+        height: 200px;
+        background-color: pink;
+        border: 1px solid red;
+      }
+      .padding-s {
+        background-color: skyblue;
+        padding: 20%;
+
+        /* 相当于padding: 80px 80px 80px 80px */
+      }
+
+      .width-f {
+        width: 400px;
+        padding: 20px;
+        height: 200px;
+        background-color: pink;
+        border: 1px solid red;
+      }
+      .width-s {
+        background-color: skyblue;
+        width: 20%;
+
+        /* 相当于 80px */
+      }
+    </style>
+  </body>
+</html>
