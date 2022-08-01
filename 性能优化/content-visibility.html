@@ -19,19 +19,21 @@
       height: 100vh;
       background: linear-gradient(45deg, skyblue, deeppink);
     }
-
     div + div {
       margin-top: 20px;
     }
+    .last h1 {
+      margin: 20px;
+    }
 
+    /* .list 这个元素，如果在可视区域的话，那就渲染他，以及子代元素 */
+    /* 如果 .list 这个元素没有在可视区，那就不渲染 .list 子代元素 */
     .last {
       content-visibility: auto;
       /* padding: 5px; */
       background: linear-gradient(45deg, skyblue, deeppink);
     }
-    .last h1 {
-      margin: 20px;
-    }
+    
 
   </style>
     给一个 DIV 容器添加 content-visibility:auto | hidden. 当当前DOM元素 没有出现在浏览器视口中, 是不会去渲染 当前DOM元素 的
@@ -72,10 +74,32 @@
     内容
     内容
   </div>
-  <div class="last">
-    <h1>我是Last 很特殊</h1>
-    <h1>我是Last 很特殊</h1>
-    <h1>我是Last 很特殊</h1>
+  <div class="last" style="background: green">
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+    <h1>我是Last 更更更更特殊</h1>
+
   </div>
   <div class="last">
     <h1>我是Last 很特殊</h1>
