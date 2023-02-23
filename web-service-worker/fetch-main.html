@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      navigator.serviceWorker
+        .register('/fetch-service.js')
+        .then((registration) => {
+          console.log('注册OK', registration);
+        })
+        .catch((err) => {
+          console.log('注册Err', err);
+        });
+
+      document.onclick = () => {
+        // const img = new Image();
+        // img.src = 'https://chinese.freecodecamp.org/news/content/images/size/w2000/2022/10/jonatan-pie-3l3RwQdHRHg-unsplash.jpeg';
+        // document.body.appendChild(img);
+        fetch('/fetch-service.js?x=2', {
+          method: 'POST',
+          body: JSON.stringify({ pageNo: 1 }),
+          headers: {
+            '__gwj-cache': 1,
+          },
+        }).then(async (res) => {
+          const text = await res.text();
+          console.log('请求回来 ');
+        });
+      };
+    </script>
+  </body>
+</html>
