@@ -1,0 +1,56 @@
+.wrap {
+  box-sizing: content-box;
+  border: 1px solid red;
+  display: grid;
+  /* 定义三列，宽度都是200px */
+  grid-template-columns: repeat(4, 200px);
+  /* 定义一行，高度是150px */
+
+  /* 其余没有设置的行高 */
+  grid-auto-rows: 200px;
+  grid-auto-columns: 50px;
+
+  gap: 10px;
+  grid-auto-flow: row;
+
+  /* 如果没有设置列/行的尺寸，那么尺寸就是 min-content */
+}
+
+.item:nth-child(odd) {
+  background-color: darkslateblue;
+}
+
+.item:nth-child(even) {
+  background-color: deepskyblue;
+}
+
+.item:nth-child(2) {
+  background-color: orange;
+
+  /* grid-row: auto / xx  牛 */
+
+  /* 以下都等效 */
+  /* grid-row: 1 */
+  /* grid-row: 1 / 2    */
+  /* grid-row: 1 / span 1    */
+  /* grid-row-start: 1;   grid-row-end: 2 */
+  grid-row: 2;
+  grid-column: 2 / -1;
+
+  /* grid-row 默认值： auto / span 1 */
+  /* grid-column 默认值： auto / span 1 */
+}
+
+.item:nth-child(3) {
+  background-color: green;
+
+  grid-column: 1 / -1;
+  grid-row: 4;
+}
+
+.item:nth-child(4) {
+  background-color: red;
+
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
