@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>层叠上下文</title>
+  </head>
+  <body>
+    <style>
+      main {
+        background-color: skyblue;
+        width: 500px;
+        height: 500px;
+        /* 让元素成为「层叠上下文」的条件，参考MDN： */
+        /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context */
+        /* 举例1：position 值为 absolute（绝对定位）或 relative（相对定位）且 z-index 值不为 auto 的元素 */
+        border: 1px solid red;
+        position: relative;
+        z-index: 1;
+      }
+      /* 模拟父，后来着居上 */
+      main::after {
+        content: '';
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 90%;
+        background-color: #888;
+      }
+      /*  */
+      main::before {
+        content: '';
+        position: absolute;
+
+        background-color: pink;
+        left: 0px;
+        top: 20px;
+        width: 90%;
+        height: 90%;
+      }
+    </style>
+
+    main是父元素，是个层叠上下文元素。 那么div作为子元素，是没有办法在父元素后面的，因为父元素是个层叠上下文元素。 在这里例子中，若想让子元素在父元素后面，参考：father-son-impl.html
+    <main></main>
+  </body>
+</html>
