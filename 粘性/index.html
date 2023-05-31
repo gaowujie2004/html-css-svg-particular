@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position： sticky</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 2000px;
+      }
+      main {
+        height: 80vh;
+        border: 1px solid red;
+        overflow: auto;
+        margin-top: 100px;
+      }
+      .chunk {
+        height: 60vh;
+        width: 50%;
+        background-color: skyblue;
+        margin-bottom: 20px;
+      }
+      .chunk:nth-child(1) {
+        background-color: pink;
+      }
+      .chunk:nth-child(1) h1 {
+        background-color: red;
+        position: sticky;
+        top: 0px;
+      }
+
+      .chunk:nth-child(2) {
+        background-color: green;
+      }
+      .chunk:nth-child(3) {
+        background-color: deeppink;
+      }
+    </style>
+    <main>
+      <div class="chunk">
+        <h1>标题111</h1>
+        <p>标题111，是重点。能固定可以理解，是因为粘性定位元素有固定效果，当即将消失在滚动容器中。但是什么时候滚上去的？</p>
+        <p>应该是，position: sticky 元素的父元素完全滚上去了，position: sticky 元素才跟着滚上去</p>
+      </div>
+      <div class="chunk">
+        <h1>标题222</h1>
+      </div>
+      <div class="chunk">
+        <h1>标题333</h1>
+      </div>
+    </main>
+  </body>
+</html>
