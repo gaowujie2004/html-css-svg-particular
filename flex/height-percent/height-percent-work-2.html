@@ -4,25 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>高度百分比-工作</title>
+    <title>高度百分比-工作-2</title>
   </head>
   <body>
     <style>
       .wrap {
         background-color: #888;
         display: flex;
-        align-items: normal;
+      }
+
+      .box {
+        display: flex;
+        flex-direction: column;
       }
 
       .item-1 {
         background-color: pink;
         width: 100px;
         height: 10%;
+        flex-shrink: 0;
       }
       .item-2 {
         height: 400px;
         width: 200px;
         background-color: skyblue;
+        flex-shrink: 0;
       }
     </style>
     <div class="wrap">
