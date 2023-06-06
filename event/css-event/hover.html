@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css event</title>
+  </head>
+  <body>
+    <style>
+      div:hover {
+        background-color: skyblue;
+        cursor: pointer;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      p {
+        background-color: #666;
+        margin-left: 100%;
+        width: 50%;
+        height: 50%;
+      }
+    </style>
+    <div>
+      <p>SON</p>
+    </div>
+
+    <p>CSS 的 event 和 js一样，默认冒泡，例如： .father拥有 :hover，那么鼠标进入.father的子元素.son中，由于冒泡机制，意味着进入了.father</p>
+  </body>
+</html>
