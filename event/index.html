@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      .wrap + .wrap {
+        margin-top: 50px;
+      }
+      .wrap1 {
+      }
+      .wrap1:hover {
+        background-color: skyblue;
+      }
+      .son1 {
+        margin-left: 200px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        pointer-events: none;
+      }
+      .test-1 {
+        pointer-events: all;
+        background-color: green;
+        height: 50px;
+      }
+      .wrap2 {
+      }
+    </style>
+    <div class="wrap wrap1">
+      <div class="son1">
+        <div class="test-1"></div>
+      </div>
+    </div>
+    <div class="wrap wrap2"></div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 2px solid red;
+        outline: 2px solid green;
+        outline-offset: 2px;
+      }
+      main {
+        margin-top: 200px;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 2px solid red;
+
+        box-shadow: 0 0 0 2px green;
+      }
+    </style>
+    <div></div>
+    <main></main>
+    outline、box-shaodw 都是已盒子模型的border区域为起点，即边框结束点区域。
+  </body>
+</html>
