@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手风琴</title>
+  </head>
+  <body>
+    <style>
+      main {
+        padding: 10px;
+        border: 1px solid pink;
+      }
+      main {
+        margin-bottom: 50px;
+      }
+      .height {
+        height: 1000px;
+        background-color: #555;
+      }
+
+      .collapse {
+        height: 100vh;
+        overflow: auto;
+      }
+
+      main > div {
+        height: 100px;
+        background-color: pink;
+        margin-bottom: 50px;
+      }
+
+      .open {
+        height: 1000px;
+        background-color: skyblue;
+      }
+
+      .target {
+        background-color: green;
+      }
+    </style>
+    <main>
+      <div class="height"></div>
+    </main>
+    <main class="collapse">
+      <div>折叠1</div>
+      <div>折叠2</div>
+      <div>折叠2</div>
+      <div class="open">展开11111 OKOK</div>
+      <div class="target">折叠3 target</div>
+    </main>
+
+    <main>
+      <div class="height"></div>
+    </main>
+
+    <script>
+      const SELECT_LIST = [...document.querySelectorAll('.collapse > div')];
+      const OPEN_DOM = document.querySelector('.open');
+      const TARGET_tDOM = document.querySelector('.target');
+
+      function toggleFail() {
+        fold();
+        open();
+      }
+      function openTargetFail(currentIndex = 0) {
+        const target = SELECT_LIST[currentIndex];
+        target.classList.add('open'); // 先扩大
+        // 后收缩
+        const oldOpen = document.querySelector('.open');
+        oldOpen.classList.remove('open');
+      }
+
+      function toggleSuccess() {
+        fold();
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            open();
+          });
+        });
+      }
+
+      function fold() {
+        OPEN_DOM.classList.remove('open');
+        console.log(window.getComputedStyle(OPEN_DOM).height);
+      }
+
+      function open() {
+        TARGET_tDOM.classList.add('open');
+      }
+    </script>
+  </body>
+</html>

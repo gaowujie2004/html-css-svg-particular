@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手风琴-真正解决</title>
+  </head>
+  <body>
+    <style>
+      main {
+        padding: 10px;
+        /* border: 1px solid pink; */
+        margin-bottom: 50px;
+      }
+
+      .height {
+        height: 1000px;
+        background-color: #555;
+      }
+
+      .collapse {
+        /* border: 2px solid red; */
+        height: 100vh;
+        overflow: auto;
+      }
+      .collapse::-webkit-scrollbar {
+        width: 0;
+      }
+      .collapse-item {
+        height: 100px;
+        background-color: pink;
+        margin-bottom: 50px;
+      }
+
+      .open {
+        height: 800px;
+        background-color: skyblue;
+      }
+      .open:nth-child(1) {
+        background-color: red;
+        height: 800px;
+      }
+      .open:nth-child(2) {
+        background-color: green;
+        height: 800px;
+      }
+      .open:nth-child(3) {
+        background-color: orange;
+        height: 800px;
+      }
+      .open:nth-child(4) {
+        background-color: blue;
+        height: 800px;
+      }
+    </style>
+    <main>
+      <div class="height"></div>
+    </main>
+
+    <main class="collapse">
+      <div class="collapse-item">000</div>
+      <div class="collapse-item">111</div>
+      <div class="collapse-item">222</div>
+      <div class="collapse-item">333</div>
+      <div class="collapse-item">444</div>
+      <div class="collapse-item">555</div>
+      <div class="collapse-item">666</div>
+      <div class="collapse-item">777</div>
+    </main>
+
+    <main>
+      <div class="height"></div>
+    </main>
+
+    <script>
+      const SELECT_LIST = [...document.querySelectorAll('.collapse > div')];
+
+      function openTargetFail(currentIndex = 0) {
+        const oldOpen = document.querySelector('.open');
+        oldOpen?.classList?.remove('open');
+        console.log(oldOpen && oldOpen?.offsetHeight && window.getComputedStyle(oldOpen).height);
+
+        const target = SELECT_LIST[currentIndex];
+        target.classList.add('open');
+      }
+
+      for (let i = 0; i < SELECT_LIST.length; i++) {
+        SELECT_LIST[i].onclick = function () {
+          openTargetFail(i);
+        };
+      }
+    </script>
+  </body>
+</html>
